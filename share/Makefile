@@ -10,10 +10,10 @@ hosts-agent:
 hosts-master:
 	sudo scripts/hosts-master.sh
 
-agent:
+install-agent:
 	sudo scripts/install-puppet-agent.sh
 
-master:
+install-master:
 	sudo scripts/install-puppet-master.sh
 
 conf-agent:
@@ -24,9 +24,9 @@ conf-master:
 
 all:	fw rpm 
 
-agent-all: all hosts-agent agent conf-agent
+agent-all: all hosts-agent install-agent conf-agent
 
-master-all: all hosts-master master conf-master
+master-all: all hosts-master install-master conf-master
 
 clean:
 	ls
