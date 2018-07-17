@@ -17,10 +17,10 @@ master:
 	sudo scripts/install-puppet-master.sh
 
 conf-agent:
-	sudo cp share/agent/puppet.conf /etc/puppet/puppet.conf
+	sudo cp agent/puppet.conf /etc/puppet/puppet.conf
 
 conf-master:
-	sudo cp share/master/puppet.conf /etc/puppet/puppet.conf
+	sudo cp master/puppet.conf /etc/puppet/puppet.conf
 
 all:	fw rpm 
 
