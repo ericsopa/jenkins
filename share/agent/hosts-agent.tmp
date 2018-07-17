@@ -1,2 +1,2 @@
-10.0.0.11 puppetagent
-10.0.0.10 puppet puppet.example.com
+10.0.0.11 agent agent.attlocal.net
+10.0.0.10 puppet puppet.attlocal.net
