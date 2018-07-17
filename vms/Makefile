@@ -11,6 +11,8 @@ keys:
 ssh-add:
 	vagrant ssh -c "chmod 0400 /home/vagrant/.ssh/id_rsa_puppet" agent
 	vagrant scp .bash_profile agent:/home/vagrant/.bash_profile
+	vagrant ssh -c "chmod 0400 /home/vagrant/.ssh/id_rsa_puppet" master
+	vagrant scp .bash_profile master:/home/vagrant/.bash_profile
 
 agent-git:
 	vagrant ssh -c "sudo yum -y install git-core" agent
@@ -24,6 +26,6 @@ git:	agent-git master-git
 
 vim:
 	vagrant ssh -c 'echo \"colorscheme delek\" > ~/.vimrc' agent
+	vagrant ssh -c 'echo \"colorscheme delek\" > ~/.vimrc' master
 
-all: keys ssh-add git vim 
-
+all:	keys ssh-add git vim 
