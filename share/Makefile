@@ -4,8 +4,11 @@ fw:
 rpm:
 	sudo scripts/puppet-rpm.sh
 
-hosts:
-	sudo scripts/hosts.sh
+hosts-agent:
+	sudo scripts/hosts-agent.sh
+
+hosts-master:
+	sudo scripts/hosts-master.sh
 
 agent:
 	sudo scripts/install-puppet-agent.sh
@@ -13,11 +16,11 @@ agent:
 master:
 	sudo scripts/install-puppet-master.sh
 
-all:	fw rpm hosts 
+all:	fw rpm 
 
-agent-all: all agent
+agent-all: all hosts-agent agent
 
-master-all: all master
+master-all: all hosts-master master
 
 clean:
 	ls
