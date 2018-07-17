@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo sh -c "cat ./hosts.tmp >> /etc/hosts"
+sudo sh -c "cat scripts/hosts.tmp >> /etc/hosts"
