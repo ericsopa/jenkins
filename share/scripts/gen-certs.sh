@@ -1,13 +1,15 @@
 #!/bin/bash
-# Stop puppetmaster
+echo Stop puppetmaster
 sudo service puppetmaster stop
 wait
 
-#Gen certs
+echo Gen certs
 timeout 15s sudo -u puppet puppet master --no-daemonize –verbose 
 wait
 
-#Start and check puppetmaster
+echo Start puppetmaster
 puppet resource service puppetmaster ensure=running
 wait
+
+echo Check puppetmaster
 service puppetmaster status

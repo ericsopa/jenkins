@@ -23,10 +23,10 @@ conf-master:
 	sudo cp master/puppet.conf /etc/puppet/puppet.conf
 
 gen-certs:
-	sudo cp scripts/gen-certs.sh
+	sudo scripts/gen-certs.sh
 
 gen-csr:
-	sudo cp scripts/gen-csr.sh
+	sudo scripts/gen-csr.sh
 
 master-cert-sign:
 	sudo puppet cert list
