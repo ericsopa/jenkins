@@ -22,6 +22,9 @@ conf-agent:
 conf-master:
 	sudo cp master/puppet.conf /etc/puppet/puppet.conf
 
+sitemanifest:
+	sudo cp /home/vagrant/jenkins/share/master/site.pp /etc/puppet/manifests/
+
 gen-certs:
 	sudo scripts/gen-certs.sh
 
@@ -29,10 +32,10 @@ gen-csr:
 	sudo scripts/gen-csr.sh
 
 java-module:
-	sudo puppet module install puppetlabs-java
+	sudo puppet module install -v 1.6.0 puppetlabs-java
 
 tomcat-module:
-	sudo puppet module install puppetlabs-tomcat
+	sudo puppet module install -v 1.5.0 puppetlabs-tomcat
 
 all:	fw rpm 
 
