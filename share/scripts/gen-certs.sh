@@ -3,7 +3,7 @@ echo Stop puppetmaster
 sudo service puppetmaster stop
 
 echo Gen certs
-timeout 15s sudo -u puppet puppet master --no-daemonize –verbose 
+imeout 15s sudo -u puppet puppet master --no-daemonize –verbose 
 sleep 16
 
 echo Start puppetmaster
