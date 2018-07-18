@@ -28,12 +28,6 @@ gen-certs:
 gen-csr:
 	sudo scripts/gen-csr.sh
 
-master-cert-sign:
-	sudo scripts/master-cert-sign.sh
-
-agent-fingerprint:
-	sudo scripts/agent-fingerprint.sh
-
 java-module:
 	sudo puppet module install puppetlabs-java
 
@@ -42,9 +36,15 @@ tomcat-module:
 
 all:	fw rpm 
 
-agent-all: all hosts-agent install-agent conf-agent
+master-all: all hosts-master install-master conf-master gen-certs
 
-master-all: all hosts-master install-master conf-master
+agent-all: all hosts-agent install-agent conf-agent gen-csr
+
+master-cert-sign:
+	sudo scripts/master-cert-sign.sh
+
+agent-fingerprint:
+	sudo scripts/agent-fingerprint.sh
 
 clean:
 	ls
