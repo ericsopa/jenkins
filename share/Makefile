@@ -42,9 +42,9 @@ tomcat-module:
 
 all:	fw rpm 
 
-agent-all: all hosts-agent install-agent conf-agent gen-csr
+agent-all: all hosts-agent install-agent conf-agent
 
-master-all: all hosts-master install-master conf-master gen-certs
+master-all: all hosts-master install-master conf-master
 
 clean:
 	ls
