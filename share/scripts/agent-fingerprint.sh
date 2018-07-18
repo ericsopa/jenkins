@@ -1,6 +1,6 @@
-#!/bn/bash
-sudo puppet resource service pupper ensure=running
+#!/bin/bash
+sudo puppet resource service puppet ensure=running
 sudo service puppet status
-sudo puppet agent--fingerprint
-sudo pupet agent -t
+sudo puppet agent --fingerprint
+sudo puppet agent -t
 
