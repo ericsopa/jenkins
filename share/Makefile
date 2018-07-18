@@ -25,6 +25,9 @@ conf-master:
 java-module:
 	sudo puppet module install puppetlabs-java
 
+tomcat-module:
+	sudo puppet module install puppetlabs-tomcat
+
 all:	fw rpm 
 
 agent-all: all hosts-agent install-agent conf-agent
