@@ -28,6 +28,16 @@ gen-certs:
 gen-csr:
 	sudo cp scripts/gen-csr.sh
 
+master-cert-sign:
+	sudo puppet cert list
+	sudo puppet cert sign agent.attlocal.net
+
+agent-fingerprint:
+	sudo puppet resource service pupper ensure=running
+	sudo service puppet status
+	sudo puppet agent--fingerprint
+	sudo pupet agent -t
+
 java-module:
 	sudo puppet module install puppetlabs-java
 
