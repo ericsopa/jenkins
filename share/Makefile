@@ -22,6 +22,9 @@ conf-agent:
 conf-master:
 	sudo cp master/puppet.conf /etc/puppet/puppet.conf
 
+java-module:
+	sudo puppet module install puppetlabs-java
+
 all:	fw rpm 
 
 agent-all: all hosts-agent install-agent conf-agent
