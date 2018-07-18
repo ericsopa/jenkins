@@ -29,10 +29,10 @@ gen-csr:
 	sudo scripts/gen-csr.sh
 
 master-cert-sign:
-	sudo script/master-cert-sign.sh
+	sudo scripts/master-cert-sign.sh
 
 agent-fingerprint:
-	sudo script/agent-fingerprint.sh
+	sudo scripts/agent-fingerprint.sh
 
 java-module:
 	sudo puppet module install puppetlabs-java
