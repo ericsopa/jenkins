@@ -5,7 +5,6 @@ wait
 
 echo Gen certs
 timeout 15s sudo -u puppet puppet master --no-daemonize –verbose 
-wait
 
 echo Start puppetmaster
 puppet resource service puppetmaster ensure=running
