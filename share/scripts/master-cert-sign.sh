@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo puppet cert list
-sudo puppet cert sign agent.attlocal.net
+sudo puppet cert list --debug
+sudo puppet cert sign agent.attlocal.net --debug
