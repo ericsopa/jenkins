@@ -13,6 +13,8 @@ ssh-add:
 	vagrant scp .bash_profile agent:/home/vagrant/.bash_profile
 	vagrant ssh -c "chmod 0400 /home/vagrant/.ssh/id_rsa_puppet" master
 	vagrant scp .bash_profile master:/home/vagrant/.bash_profile
+	vagrant scp known_hosts agent:/home/vagrant/.ssh
+	vagrant scp known_hosts master:/home/vagrant/.ssh
 
 agent-git:
 	vagrant ssh -c "sudo yum -y install git-core" agent
