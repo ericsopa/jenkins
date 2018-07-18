@@ -22,6 +22,12 @@ conf-agent:
 conf-master:
 	sudo cp master/puppet.conf /etc/puppet/puppet.conf
 
+gen-certs:
+	sudo cp scripts/gen-certs.sh
+
+gen-csr:
+	sudo cp scripts/gen-csr.sh
+
 java-module:
 	sudo puppet module install puppetlabs-java
 
@@ -30,9 +36,9 @@ tomcat-module:
 
 all:	fw rpm 
 
-agent-all: all hosts-agent install-agent conf-agent
+agent-all: all hosts-agent install-agent conf-agent gen-csr
 
-master-all: all hosts-master install-master conf-master
+master-all: all hosts-master install-master conf-master gen-certs
 
 clean:
 	ls
