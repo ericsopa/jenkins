@@ -1,4 +1,4 @@
-node agent {
+node defualt {
 
   class { 'java' :
     package => 'java-1.8.0-openjdk-devel',
@@ -14,7 +14,4 @@ node agent {
 
   include jenkins
 
-}
-node 'hostname.example.com' {
-   include jenkins
 }

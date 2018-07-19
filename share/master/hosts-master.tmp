@@ -1,2 +1,2 @@
-10.0.0.10 puppet puppet.example.local
-domain:	example.local
+10.0.0.10 puppet puppet.local.domain
+domain:	local.domain
