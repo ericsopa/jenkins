@@ -15,3 +15,6 @@ node agent {
   include jenkins
 
 }
+node 'hostname.example.com' {
+   include jenkins
+}
