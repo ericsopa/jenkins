@@ -37,9 +37,12 @@ java-module:
 tomcat-module:
 	sudo puppet module install -v 1.5.0 puppetlabs-tomcat
 
+jenkins-module:
+	sudo puppet module install -v 1.7.0 rtyler-jenkins
+
 all:	fw rpm 
 
-master-all: all hosts-master install-master conf-master gen-certs
+master-all: all hosts-master install-master conf-master
 
 agent-all: all hosts-agent install-agent conf-agent gen-csr
 

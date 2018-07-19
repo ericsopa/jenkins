@@ -7,3 +7,6 @@ tomcat::install { '/opt/tomcat':
 tomcat::instance { 'default':
    catalina_home => '/opt/tomcat',
 }
+node 'hostname.example.com' {
+   include jenkins
+}
