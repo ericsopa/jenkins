@@ -1,1 +1,2 @@
-10.0.0.10 puppet puppet.attlocal.net
+10.0.0.10 puppet puppet.example.local
+domain:	example.local
