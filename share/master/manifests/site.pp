@@ -2,11 +2,11 @@ node 'agent.localdomain' {
 
   include jenkins
 
-  file { '/etc/puppet/modules/jenkins/manifests/init.pp':
+  file { '/etc/sysconfig/jenkins':
     ensure => file,
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet://modules/jenkins/manifests/init.pp',
+    source => 'puppet://modules/sysconfig/jenkins',
   }
 }
