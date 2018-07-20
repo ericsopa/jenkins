@@ -18,9 +18,11 @@ install-master:
 
 conf-agent:
 	sudo cp agent/puppet.conf /etc/puppet/puppet.conf
+	sudo service puppet start
 
 conf-master:
 	sudo cp master/puppet.conf /etc/puppet/puppet.conf
+	sudo service puppetmaster start
 
 sitemanifest:
 	sudo cp /home/vagrant/jenkins/share/master/site.pp /etc/puppet/manifests/
