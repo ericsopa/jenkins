@@ -46,7 +46,7 @@ all:	fw rpm
 
 master-all: all hosts-master install-master conf-master
 
-agent-all: all hosts-agent install-agent conf-agent gen-csr
+agent-all: all hosts-agent install-agent conf-agent
 
 master-cert-sign:
 	sudo scripts/master-cert-sign.sh
