@@ -1,4 +1,6 @@
-node defualt {
+node agent {
+
+  include jenkins
 
   class { 'java' :
     package => 'java-1.8.0-openjdk-devel',
@@ -11,7 +13,4 @@ node defualt {
   tomcat::instance { 'default':
      catalina_home => '/opt/tomcat',
   }
-
-  include jenkins
-
 }
