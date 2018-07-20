@@ -11,6 +11,6 @@ node 'agent.localdomain' {
   }
 
   tomcat::instance { 'default':
-     catalina_home => '/opt/tomcat',
+    catalina_home => '/opt/tomcat',
   }
 }
