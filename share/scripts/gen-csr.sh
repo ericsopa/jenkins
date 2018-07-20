@@ -1,3 +1,7 @@
 #!/bin/bash
+
+echo Stop puppet
 sudo service puppet stop
-sudo puppet agent -t --debug
+
+echo Run puppet agent test with 120 second wait
+sudo puppet agent -t -w 120
