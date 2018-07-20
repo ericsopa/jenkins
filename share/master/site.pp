@@ -1,4 +1,4 @@
-node agent {
+node 'agent.localdomain' {
 
   include jenkins
 
