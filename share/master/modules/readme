@@ -1,0 +1,1 @@
+This is initially copied by make from repo to /etc/puppet/modules/sysconfig on master to be read by puppet and deployed to /etc/sysconfig/jenkins on the agent.
