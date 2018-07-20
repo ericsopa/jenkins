@@ -57,7 +57,7 @@ tomcat-module:
 	sudo puppet module install -v 1.5.0 puppetlabs-tomcat
 
 jenkins-module:
-	sudo puppet module install -v 1.7.0 rtyler-jenkins
+	sudo puppet module install -v 1.2.0 rtyler-jenkins
 
 sitemanifest:
 	sudo cp /home/vagrant/jenkins/share/master/site.pp /etc/puppet/manifests/
