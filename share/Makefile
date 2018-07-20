@@ -44,7 +44,7 @@ jenkins-module:
 
 all:	fw rpm 
 
-master-all: all hosts-master install-master conf-master
+master-all: all hosts-master install-master conf-master gen-certs
 
 agent-all: all hosts-agent install-agent conf-agent gen-csr
 
