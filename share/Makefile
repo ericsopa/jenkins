@@ -1,38 +1,55 @@
+## master ##
+master-all: all hosts-master install-master conf-master
+
+## included in master-all
+all:	fw rpm 
+
 fw:
 	sudo scripts/iptables.sh
 
 rpm:
 	sudo scripts/puppet-rpm.sh
 
-hosts-agent:
-	sudo scripts/hosts-agent.sh
-
 hosts-master:
 	sudo scripts/hosts-master.sh
 
-install-agent:
-	sudo scripts/install-puppet-agent.sh
-
 install-master:
 	sudo scripts/install-puppet-server.sh
-
-conf-agent:
-	sudo cp agent/puppet.conf /etc/puppet/puppet.conf
-	sudo service puppet start
 
 conf-master:
 	sudo cp master/puppet.conf /etc/puppet/puppet.conf
 	sudo service puppetmaster start
 
-sitemanifest:
-	sudo cp /home/vagrant/jenkins/share/master/site.pp /etc/puppet/manifests/
+## agent ##
+agent-all: all hosts-agent install-agent conf-agent
 
+hosts-agent:
+	sudo scripts/hosts-agent.sh
+
+install-agent:
+	sudo scripts/install-puppet-agent.sh
+
+conf-agent:
+	sudo cp agent/puppet.conf /etc/puppet/puppet.conf
+	sudo service puppet start
+
+## master ##
 gen-certs:
 	sudo scripts/gen-certs.sh
 
+## agent ##
 gen-csr:
 	sudo scripts/gen-csr.sh
 
+## master ##
+master-cert-sign:
+	sudo scripts/master-cert-sign.sh
+
+## agent ##
+agent-fingerprint:
+	sudo scripts/agent-fingerprint.sh
+
+## master ##
 java-module:
 	sudo puppet module install -v 1.6.0 puppetlabs-java
 
@@ -42,17 +59,8 @@ tomcat-module:
 jenkins-module:
 	sudo puppet module install -v 1.7.0 rtyler-jenkins
 
-all:	fw rpm 
-
-master-all: all hosts-master install-master conf-master
-
-agent-all: all hosts-agent install-agent conf-agent
-
-master-cert-sign:
-	sudo scripts/master-cert-sign.sh
-
-agent-fingerprint:
-	sudo scripts/agent-fingerprint.sh
+sitemanifest:
+	sudo cp /home/vagrant/jenkins/share/master/site.pp /etc/puppet/manifests/
 
 clean:
-	ls
+	echo "I'm good"
