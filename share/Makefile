@@ -62,7 +62,8 @@ jenkins-module:
 manifests:
 	sudo cp /home/vagrant/jenkins/share/master/manifests/site.pp /etc/puppet/manifests/
 	sudo cp /home/vagrant/jenkins/share/master/manifests/init.pp /etc/puppet/manifests/
-	sudo cp /home/vagrant/jenkins/share/master/modules/jenkins /etc/puppet/modules/jenkins
+	sudo cp /home/vagrant/jenkins/share/master/modules/jenkins /etc/puppet/modules/sysconfig/
+	sudo cp /home/vagrant/jenkins/share/master/manifests/jenkins/init.pp /etc/puppet/modules/jenkins/manifests
 
 clean:
 	echo "I'm good"

@@ -1,0 +1,15 @@
+Step 1. "make manifests" will copy init.pp and site.pp from:
+	/home/vagrant/jenkins/share/master/manifests/
+	to
+	/etc/puppet/manifests/
+	and copy the sysconfig "jenkins" file from:
+	/home/vagrant/jenkins/share/master/modules/
+	to
+	/etc/puppet/manifests/modules
+ 
+Step 2. "puppet agent -t" will:
+	i. Deploy Jenkins on agent
+	ii. invoke file{} in /etc/puppet/manifests/site.pp and copy the sysconfig "jenkins" file from:
+	/etc/puppet/modules/sysconfig/ on master
+	to
+	/etc/sysconfig/jenkins on agent
