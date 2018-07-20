@@ -7,6 +7,6 @@ node 'agent.localdomain' {
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    source => 'puppet:///modules/jenkins/init.pp',
+    source => 'puppet://modules/jenkins/manifests/init.pp',
   }
 }
