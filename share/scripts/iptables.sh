@@ -1,3 +1,3 @@
 #!/bin/bash
-iptables -F
-service iptables save
+sudo iptables -F
+sudo service iptables save
