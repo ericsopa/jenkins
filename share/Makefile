@@ -14,7 +14,7 @@ install-agent:
 	sudo scripts/install-puppet-agent.sh
 
 install-master:
-	sudo scripts/install-puppet-master.sh
+	sudo scripts/install-puppet-server.sh
 
 conf-agent:
 	sudo cp agent/puppet.conf /etc/puppet/puppet.conf
