@@ -81,7 +81,7 @@ class jenkins(
   $repo               = $jenkins::params::repo,
   $service_enable     = $jenkins::params::service_enable,
   $service_ensure     = $jenkins::params::service_ensure,
-  $config_hash        = {},
+  $config_hash        = {'JENKINS_PORT' => { 'value' => '8004' }},
   $plugin_hash        = {},
   $configure_firewall = undef,
   $install_java       = $jenkins::params::install_java,
