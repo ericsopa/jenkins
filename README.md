@@ -28,8 +28,8 @@ Assumes linux or Windows with Cygwin or other GNU tools like SSH. This project w
 8. git clone git@github.com:ericsopa/jenkins.git
 
 ### Installation
- * host = Virtualbox
- * vagrant = user
+ * host = Computer running Virtualbox
+ * vagrant = user to login to VMs
  * master = VM with Puppet Server
 * agent = VM with Puppet Agent
 
