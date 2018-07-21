@@ -79,7 +79,7 @@
 # @example Bulk sysconf
 #   class{ 'jenkins':
 #     config_hash => {
-#       'HTTP_PORT' => { 'value' => '8000' },
+#       'HTTP_PORT' => { 'value' => '8080' },
 #       'AJP_PORT'  => { 'value' => '9009' },
 #     }
 #   }

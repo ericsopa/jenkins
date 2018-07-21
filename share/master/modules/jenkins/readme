@@ -1,0 +1,6 @@
+Step 1. "make manifest" needs to copy init.pp from:
+	/home/vagrant/jenkins/share/master/manifests/jenkins/
+	to
+	/etc/puppet/modules/jenkins/manifests/
+
+Step 2. Then "puppet aget -t" will deploy the OpenJDK JRE on agent.

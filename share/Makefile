@@ -59,8 +59,11 @@ tomcat-module:
 jenkins-module:
 	sudo puppet module install -v 1.2.0 rtyler-jenkins
 
-sitemanifest:
-	sudo cp /home/vagrant/jenkins/share/master/site.pp /etc/puppet/manifests/
+manifests:
+	sudo cp /home/vagrant/jenkins/share/master/manifests/site.pp /etc/puppet/manifests/
+	sudo cp /home/vagrant/jenkins/share/master/manifests/init.pp /etc/puppet/manifests/
+#	sudo cp /home/vagrant/jenkins/share/master/modules/sysconfig/jenkins /etc/puppet/modules/sysconfig/
+	sudo cp /home/vagrant/jenkins/share/master/modules/jenkins/init.pp /etc/puppet/modules/jenkins/manifests
 
 clean:
 	echo "I'm good"
