@@ -53,16 +53,12 @@ agent-fingerprint:
 java-module:
 	sudo puppet module install -v 1.6.0 puppetlabs-java
 
-tomcat-module:
-	sudo puppet module install -v 1.5.0 puppetlabs-tomcat
-
 jenkins-module:
 	sudo puppet module install -v 1.2.0 rtyler-jenkins
 
 manifests:
 	sudo cp /home/vagrant/jenkins/share/master/manifests/site.pp /etc/puppet/manifests/
 	sudo cp /home/vagrant/jenkins/share/master/manifests/init.pp /etc/puppet/manifests/
-#	sudo cp /home/vagrant/jenkins/share/master/modules/sysconfig/jenkins /etc/puppet/modules/sysconfig/
 	sudo cp /home/vagrant/jenkins/share/master/modules/jenkins/init.pp /etc/puppet/modules/jenkins/manifests
 
 clean:
