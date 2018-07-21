@@ -1,3 +1,2 @@
-10.0.0.11 agent agent.localdomain
 10.0.0.10 puppet puppet.localdomain
 domain:	localdomain
