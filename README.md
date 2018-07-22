@@ -18,14 +18,23 @@ Assumes linux or Windows with Cygwin or other GNU tools like SSH. This project w
 1. Install VirtualBox
 2. Install Vagrant
 3. Install vagrant scp plugin
-  * vagrant plugin install vagrant-scp
+```
+vagrant plugin install vagrant-scp
+```
 4. Copy SSH keys to ~/.ssh directory
   * id_rsa_puppet.pub
   * id_rsa_puppet
-5. chmod 0400 ~/.ssh/id_rsa_puppet\*
-6. ssh-agent /bin/sh
-7. ssh-add ~/.ssh/id_rsa_puppet
-8. git clone git@github.com:ericsopa/jenkins.git
+```
+5. Configure SSH keys
+```
+chmod 0400 ~/.ssh/id_rsa_puppet\*
+ssh-agent /bin/sh
+ssh-add ~/.ssh/id_rsa_puppet
+```
+6. Clone Git repo 
+```
+git clone git@github.com:ericsopa/jenkins.git
+```
 
 ### Installation
  * host = Computer running Virtualbox
