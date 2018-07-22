@@ -31,24 +31,33 @@ Assumes linux or Windows with Cygwin or other GNU tools like SSH. This project w
  * host = Computer running Virtualbox
  * vagrant = user to login to VMs
  * master = VM with Puppet Server
-* agent = VM with Puppet Agent
+ * agent = VM with Puppet Agent
 
 ```[host:/~/src/Jenkins/vms] $ vagrant up
 [host:/~/src/Jenkins/vms] $ make all
 [host:/~/src/Jenkins/vms] $ vagrant ssh master
-[vagrant@master] $ cd jenkins/share
-[vagrant@master] $ make master-all
+                --- switch host ---
+         [vagrant@master] $ cd jenkins/share
+         [vagrant@master] $ make master-all
+                --- switch host ---
 [host:/~/src/Jenkins/vms] $ vagrant ssh agent
-[vagrant@agent] $ cd jenkins/share
-[vagrant@agent] $ make agent-all
-[vagrant@master] $ make gen-certs
-[vagrant@agent] $ make gen-csr
-[vagrant@master] $ make master-cert-sign
-[vagrant@agent] $ make agent-fingerprint
-[vagrant@master] $ make java-module
-[vagrant@master] $ make jenkins-module
-[vagrant@master] $ make manifest
-[vagrant@agent] $ sudo puppet agent -t
+                --- switch host ---
+          [vagrant@agent] $ cd jenkins/share
+          [vagrant@agent] $ make agent-all
+                --- switch host ---
+         [vagrant@master] $ make gen-certs
+                --- switch host ---
+          [vagrant@agent] $ make gen-csr
+                --- switch host ---
+         [vagrant@master] $ make master-cert-sign
+                --- switch host ---
+          [vagrant@agent] $ make agent-fingerprint
+                --- switch host ---
+         [vagrant@master] $ make java-module
+         [vagrant@master] $ make jenkins-module
+         [vagrant@master] $ make manifest
+                --- switch host ---
+          [vagrant@agent] $ sudo puppet agent -t
 ```
 ### Test
 On host, open a web browser and connection to:
