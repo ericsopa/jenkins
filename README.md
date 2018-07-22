@@ -6,9 +6,8 @@
 1. SSH private key for github.com repo
 
 ### Project Files
-1. SSH keys
+1. SSH key
   * Id_rsa_puppet
-  * Id_rsa_puppet.pub
 2. Repo
   * https://github.com/ericsopa/jenkins
 3. Documentation
@@ -23,7 +22,6 @@ vagrant plugin install vagrant-scp
 ```
 4. Copy SSH keys to ~/.ssh directory
 ```
-cp id_rsa_puppet.pub ~/.ssh
 cp id_rsa_puppet ~/.ssh
 ```
 5. Configure SSH keys

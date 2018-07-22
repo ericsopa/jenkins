@@ -1,11 +1,7 @@
 keys:
-	cp ~/.ssh/id_rsa_puppet.pub .
 	cp ~/.ssh/id_rsa_puppet .
-	vagrant scp id_rsa_puppet.pub master:/home/vagrant/.ssh/id_rsa_puppet.pub
 	vagrant scp id_rsa_puppet master:/home/vagrant/.ssh/id_rsa_puppet
-	vagrant scp id_rsa_puppet.pub agent:/home/vagrant/.ssh/id_rsa_puppet.pub
 	vagrant scp id_rsa_puppet agent:/home/vagrant/.ssh/id_rsa_puppet
-	rm -f id_rsa_puppet.pub
 	rm -f id_rsa_puppet
 
 ssh-add:
