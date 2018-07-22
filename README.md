@@ -22,8 +22,9 @@ Assumes linux or Windows with Cygwin or other GNU tools like SSH. This project w
 vagrant plugin install vagrant-scp
 ```
 4. Copy SSH keys to ~/.ssh directory
-  * id_rsa_puppet.pub
-  * id_rsa_puppet
+```
+cp id_rsa_puppet.pub ~/.ssh
+cp id_rsa_puppet ~/.ssh
 ```
 5. Configure SSH keys
 ```
