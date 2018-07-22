@@ -44,14 +44,14 @@ git clone git@github.com:ericsopa/jenkins.git
  * agent = VM with Puppet Agent
 
 ```
-[host:/~/src/Jenkins/vms] $ vagrant up
-[host:/~/src/Jenkins/vms] $ make all
-[host:/~/src/Jenkins/vms] $ vagrant ssh master
+[host:/~/src/jenkins/vms] $ vagrant up
+[host:/~/src/jenkins/vms] $ make all
+[host:/~/src/jenkins/vms] $ vagrant ssh master
                 --- switch host ---
          [vagrant@master] $ cd jenkins/share
          [vagrant@master] $ make master-all
                 --- switch host ---
-[host:/~/src/Jenkins/vms] $ vagrant ssh agent
+[host:/~/src/jenkins/vms] $ vagrant ssh agent
                 --- switch host ---
           [vagrant@agent] $ cd jenkins/share
           [vagrant@agent] $ make agent-all
