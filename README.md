@@ -33,7 +33,8 @@ Assumes linux or Windows with Cygwin or other GNU tools like SSH. This project w
  * master = VM with Puppet Server
  * agent = VM with Puppet Agent
 
-```[host:/~/src/Jenkins/vms] $ vagrant up
+```
+[host:/~/src/Jenkins/vms] $ vagrant up
 [host:/~/src/Jenkins/vms] $ make all
 [host:/~/src/Jenkins/vms] $ vagrant ssh master
                 --- switch host ---
