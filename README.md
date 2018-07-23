@@ -3,7 +3,7 @@
 1. VirtualBox
 1. Vagrant
 1. Vagrant scp plugin
-1. GNU make, git-core
+1. GNU make, git-core, ssh
 1. SSH private key for github.com repo
 
 ### Project Files
