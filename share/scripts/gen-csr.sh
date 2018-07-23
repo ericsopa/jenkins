@@ -3,5 +3,5 @@
 echo Stop puppet
 sudo service puppet stop
 
-echo Run puppet agent test with 15 second wait
+echo Run puppet agent test and wait for cert
 sudo puppet agent -t -w 15

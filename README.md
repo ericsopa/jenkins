@@ -41,6 +41,13 @@ git clone git@github.com:ericsopa/jenkins.git
  * master = VM with Puppet Server
  * agent = VM with Puppet Agent
 
+The shortest path to done is:
+```
+[host:/~/src/jenkins] $ make ithappen
+
+```
+If that fails for some reason, you can do the steps one at a time:
+
 ```
 [host:/~/src/jenkins/vms] $ vagrant up
 [host:/~/src/jenkins/vms] $ make all

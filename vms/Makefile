@@ -1,3 +1,5 @@
+export VAGRANT_CWD := . 
+
 keys:
 	cp ~/.ssh/id_rsa_puppet .
 	vagrant scp id_rsa_puppet master:/home/vagrant/.ssh/id_rsa_puppet
