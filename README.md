@@ -26,7 +26,7 @@ cp id_rsa_puppet ~/.ssh
 ```
 5. Configure SSH keys
 ```
-chmod 0400 ~/.ssh/id_rsa_puppet\*
+chmod 0400 ~/.ssh/id_rsa_puppet*
 ssh-agent /bin/sh
 ssh-add ~/.ssh/id_rsa_puppet
 ```
