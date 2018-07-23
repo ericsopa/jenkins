@@ -44,7 +44,6 @@ git clone git@github.com:ericsopa/jenkins.git
 The shortest path to done is:
 ```
 [host:/~/src/jenkins] $ make ithappen
-
 ```
 If that fails for some reason, you can do the steps one at a time:
 
