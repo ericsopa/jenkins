@@ -2,6 +2,8 @@ export VAGRANT_CWD := vms
 
 ithappen:
 	@echo "Standing up a 2 VM Puppet Master-Agent env"
+	vagrant init	
+	mv Vagrantfile vms/	
 	vagrant up
 	@echo "Prep VMs with certs, Git and repo"
 	make -C vms all
