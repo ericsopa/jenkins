@@ -27,6 +27,6 @@ ithappen:
 	vagrant ssh -c "sudo puppet agent -t " agent
 	@echo "makeithappen: Jenkins should be running on http://10.0.0.10:8000"
 clean:
-	vagrant destroy
+	vagrant destroy --force
 	mv vms/Vagrantfile .
 	rm -rf vms/.vagrant
