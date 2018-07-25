@@ -1,14 +1,14 @@
 #!/bin/bash
-echo Stop puppetmaster
+echo gen-certs: Stop puppetmaster
 sudo service puppetmaster stop
 
-echo Gen certs
+echo gen-certs: Gen certs
 sudo -u puppet puppet master --no-daemonize –-verbose &
-sleep 5
+sleep 10
 kill %1
 
-echo Start puppetmaster
+echo gen-erts: Start puppetmaster
 sudo puppet resource service puppetmaster ensure=running
 
-echo Check puppetmaster
+echo gen-erts: Check puppetmaster
 sudo service puppetmaster status

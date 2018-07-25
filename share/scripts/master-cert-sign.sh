@@ -1,3 +1,4 @@
 #!/bin/bash
-sudo puppet cert list --debug
-sudo puppet cert sign --all --debug
+echo master-cert-sign: Sign certs
+sudo puppet cert list
+sudo puppet cert sign --all

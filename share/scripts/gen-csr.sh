@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo Stop puppet
+echo gen-csr: Stop puppet
 sudo service puppet stop
 
-echo Run puppet agent test and wait for cert
-sudo puppet agent -t -w 15
+echo gen-csr: Run puppet agent test and wait for cert
+sudo puppet agent -t -w 20
