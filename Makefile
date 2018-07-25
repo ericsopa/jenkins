@@ -24,8 +24,9 @@ ithappen:
 	@echo "makeithappen: Install custom manifests on Master"
 	vagrant ssh -c "make -C jenkins/share manifests" master
 	@echo "makeithappen: Puppet installs Java and Jenkins on Agent"
-	vagrant ssh -c "sudo puppet agent -t " agent
+	-vagrant ssh -c "sudo puppet agent -t " agent
 	@echo "makeithappen: Jenkins should be running on http://10.0.0.10:8000"
+	./test/acceptance.sh
 clean:
 	vagrant destroy --force
 	mv vms/Vagrantfile .
