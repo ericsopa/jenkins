@@ -1,0 +1,119 @@
+Agent pid 15048
+Identity added: /home/paul.ericson/.ssh/id_rsa_puppet (/home/paul.ericson/.ssh/i                                                       d_rsa_puppet)
+
+paul.ericson@TAG009441984064 ~
+$ make ithappen
+makeithappen: Standing up a 2 VM Puppet Master-Agent env
+vagrant init
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+mv Vagrantfile vms/
+vagrant up
+Bringing machine 'master' up with 'virtualbox' provider...
+Bringing machine 'agent' up with 'virtualbox' provider...
+==> master: Importing base box 'puppetlabs/centos-6.6-64-nocm'...
+==> master: Matching MAC address for NAT networking...
+==> master: Checking if box 'puppetlabs/centos-6.6-64-nocm' is up to date...
+==> master: Setting the name of the VM: vms_master_1532569268683_76559
+==> master: Clearing any previously set network interfaces...
+==> master: Preparing network interfaces based on configuration...
+    master: Adapter 1: nat
+    master: Adapter 2: hostonly
+==> master: Forwarding ports...
+    master: 22 (guest) => 2222 (host) (adapter 1)
+==> master: Booting VM...
+==> master: Waiting for machine to boot. This may take a few minutes...
+    master: SSH address: 127.0.0.1:2222
+    master: SSH username: vagrant
+    master: SSH auth method: private key
+    master:
+    master: Vagrant insecure key detected. Vagrant will automatically replace
+    master: this with a newly generated keypair for better security.
+    master:
+    master: Inserting generated public key within guest...
+    master: Removing insecure key from the guest if it's present...
+    master: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> master: Machine booted and ready!
+==> master: Checking for guest additions in VM...
+    master: The guest additions on this VM do not match the installed version of
+    master: VirtualBox! In most cases this is fine, but in rare cases it can
+    master: prevent things such as shared folders from working properly. If you see
+    master: shared folder errors, please make sure the guest additions within the
+    master: virtual machine match the version of VirtualBox you have installed on
+    master: your host and reload your VM.
+    master:
+    master: Guest Additions Version: 5.0.16
+    master: VirtualBox Version: 5.2
+==> master: Setting hostname...
+==> master: Configuring and enabling network interfaces...
+    master: SSH address: 127.0.0.1:2222
+    master: SSH username: vagrant
+    master: SSH auth method: private key
+==> master: Mounting shared folders...
+    master: /vagrant => C:/Users/Paul.Ericson/src/jenkins/vms
+==> agent: Importing base box 'puppetlabs/centos-6.6-64-nocm'...
+==> agent: Matching MAC address for NAT networking...
+==> agent: Checking if box 'puppetlabs/centos-6.6-64-nocm' is up to date...
+==> agent: Setting the name of the VM: vms_agent_1532569331322_99274
+==> agent: Fixed port collision for 22 => 2222. Now on port 2200.
+==> agent: Clearing any previously set network interfaces...
+==> agent: Preparing network interfaces based on configuration...
+    agent: Adapter 1: nat
+    agent: Adapter 2: hostonly
+==> agent: Forwarding ports...
+    agent: 22 (guest) => 2200 (host) (adapter 1)
+==> agent: Booting VM...
+==> agent: Waiting for machine to boot. This may take a few minutes...
+    agent: SSH address: 127.0.0.1:2200
+    agent: SSH username: vagrant
+    agent: SSH auth method: private key
+    agent: Warning: Connection aborted. Retrying...
+    agent: Warning: Remote connection disconnect. Retrying...
+    agent: Warning: Connection aborted. Retrying...
+    agent:
+    agent: Vagrant insecure key detected. Vagrant will automatically replace
+    agent: this with a newly generated keypair for better security.
+    agent:
+    agent: Inserting generated public key within guest...
+    agent: Removing insecure key from the guest if it's present...
+    agent: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> agent: Machine booted and ready!
+==> agent: Checking for guest additions in VM...
+    agent: The guest additions on this VM do not match the installed version of
+    agent: VirtualBox! In most cases this is fine, but in rare cases it can
+    agent: prevent things such as shared folders from working properly. If you see
+    agent: shared folder errors, please make sure the guest additions within the
+    agent: virtual machine match the version of VirtualBox you have installed on
+    agent: your host and reload your VM.
+    agent:
+    agent: Guest Additions Version: 5.0.16
+    agent: VirtualBox Version: 5.2
+==> agent: Setting hostname...
+==> agent: Configuring and enabling network interfaces...
+    agent: SSH address: 127.0.0.1:2200
+    agent: SSH username: vagrant
+    agent: SSH auth method: private key
+==> agent: Mounting shared folders...
+    agent: /vagrant => C:/Users/Paul.Ericson/src/jenkins/vms
+makeithappen: Prep VMs with certs, Git and repo
+make -C vms all
+make[1]: Entering directory '/cygdrive/c/Users/Paul.Ericson/src/jenkins/vms'
+cp ~/.ssh/id_rsa_puppet .
+vagrant scp id_rsa_puppet master:/home/vagrant/.ssh/id_rsa_puppet
+Could not create directory '/home/paul.ericson/.ssh'.
+Warning: Permanently added '[127.0.0.1]:2222' (RSA) to the list of known hosts.
+vagrant scp id_rsa_puppet agent:/home/vagrant/.ssh/id_rsa_puppet
+Could not create directory '/home/paul.ericson/.ssh'.
+Warning: Permanently added '[127.0.0.1]:2200' (RSA) to the list of known hosts.
+rm -f id_rsa_puppet
+vagrant ssh -c "chmod 0400 /home/vagrant/.ssh/id_rsa_puppet" agent
+Connection to 127.0.0.1 closed.
+vagrant scp .bash_profile agent:/home/vagrant/.bash_profile
+Could not create directory '/home/paul.ericson/.ssh'.
+Warning: Permanently added '[127.0.0.1]:2200' (RSA) to the list of known hosts.
+vagrant ssh -c "chmod 0400 /home/vagrant/.ssh/id_rsa_puppet" master
+Connection to 127.0.0.1 closed.
+vagrant scp .bash_profile master:/home/vagrant/.bash_profile
+
