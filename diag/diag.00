@@ -1,5 +1,5 @@
 Agent pid 15048
-Identity added: /home/paul.ericson/.ssh/id_rsa_puppet (/home/paul.ericson/.ssh/i                                                       d_rsa_puppet)
+Identity added: /home/paul.ericson/.ssh/id_rsa_puppet (/home/paul.ericson/.ssh/id_rsa_puppet)
 
 paul.ericson@TAG009441984064 ~
 $ make ithappen
