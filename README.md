@@ -2,8 +2,8 @@
 ### Dependencies
 1. CentOS 6/Puppet 3.8.7 Master VM
 1. CentOS 6/Puppet 3.8.7 Agent VM
-1. /etc/hosts file entries similar to jenkins/share/master/hosts-master.tmp on Master
-1. /etc/hosts file entries similar to jenkins/share/agent/hosts-agent.tmp on Agent
+1. /etc/hosts file entries on Master similar to jenkins/share/master/hosts-master.tmp
+1. /etc/hosts file entries on Agent similar to jenkins/share/agent/hosts-agent.tmp
 1. /etc/puppet/puppet.conf similar to jenkins/share/master/puppet.conf on Master
 1. /etc/puppet/puppet.conf similar to jenkins/share/agent/puppet.conf on Agent
 1. Master-Agent signed certs in place, Puppet environment ready for Puppet code
@@ -27,7 +27,7 @@
 ### Test
 On host, open a web browser and connection to:
 
- * http://10.0.0.10:8000
+ * http://10.0.0.11:8000
 
 Jenkins should be listening on port 8000.
 
