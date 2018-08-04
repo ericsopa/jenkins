@@ -1,79 +1,28 @@
 # jenkins 
 ### Dependencies
-1. VirtualBox
-1. Vagrant
-1. Vagrant scp plugin
-1. GNU make, git-core, ssh
-1. SSH private key for github.com repo
+1. CentOS 6/Puppet 3.8.7 Master VM
+1. CentOS 6/Puppet 3.8.7 Agent VM
+1. /etc/hosts file entries similar to share/master/hosts-master.tmp on Master
+1. /etc/hosts file entries similar to share/agent/hosts-agent.tmp on Agent
+1. /etc/puppet/puppet.conf similar to shre/master/puppet.conf on Master
+1. /etc/puppet/puppet.conf similar to shre/agent/puppet.conf on Agent
+1. Master-Agent signed certs in place, environment ready for Puppet code
+1. "jenkins" repo in ~ on Master and Agent VMs
+1. ~  = /home/vagrant/
 
 ### Project Files
-1. SSH key
-  * Id_rsa_puppet
-2. Repo
+1. Repo uploaded, also available at:
   * https://github.com/ericsopa/jenkins
-3. Documentation
-
-### Test Environment Setup
-Assumes linux or Windows with Cygwin or other GNU tools like SSH. This project was built on Windows 10 with Cygwin.
-1. Install VirtualBox
-2. Install Vagrant
-3. Install vagrant scp plugin
-```
-vagrant plugin install vagrant-scp
-```
-4. Copy SSH keys to ~/.ssh directory
-```
-cp id_rsa_puppet ~/.ssh
-```
-5. Configure SSH keys
-```
-chmod 0400 ~/.ssh/id_rsa_puppet*
-ssh-agent /bin/sh
-ssh-add ~/.ssh/id_rsa_puppet
-```
-6. Clone Git repo 
-```
-git clone git@github.com:ericsopa/jenkins.git
-```
+2. Documentation
 
 ### Installation
- * host = Computer running Virtualbox
- * vagrant = user to login to VMs
  * master = VM with Puppet Server
  * agent = VM with Puppet Agent
 
-The shortest path to done is:
 ```
-[host:/~/src/jenkins] $ make ithappen
-```
-If that fails for some reason, you can do the steps one at a time:
-
-```
-[host:/~/src/jenkins/vms] $ vagrant up
-[host:/~/src/jenkins/vms] $ make all
-[host:/~/src/jenkins/vms] $ vagrant ssh master
-                --- switch host ---
-         [vagrant@master] $ cd jenkins/share
-         [vagrant@master] $ make master-all
-                --- switch host ---
-[host:/~/src/jenkins/vms] $ vagrant ssh agent
-                --- switch host ---
-          [vagrant@agent] $ cd jenkins/share
-          [vagrant@agent] $ make agent-all
-                --- switch host ---
-         [vagrant@master] $ make gen-certs
-                --- switch host ---
-          [vagrant@agent] $ make gen-csr
-                --- switch host ---
-         [vagrant@master] $ make master-cert-sign
-                --- switch host ---
-          [vagrant@agent] $ make agent-fingerprint
-                --- switch host ---
-         [vagrant@master] $ make java-module
-         [vagrant@master] $ make jenkins-module
-         [vagrant@master] $ make manifest
-                --- switch host ---
-          [vagrant@agent] $ sudo puppet agent -t
+    [vagrant@master:~/jenkins/share] $ make puppet
+           --- switch host ---
+    [vagrant@agent:~/jenkins/share] $ make deploy
 ```
 ### Test
 On host, open a web browser and connection to:
