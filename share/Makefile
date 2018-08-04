@@ -66,7 +66,7 @@ manifests:
 ## agent ##
 deploy:
 	-sudo puppet agent -t
-	echo "Jenkins should be running on http://10.0.0.10:8000"
+	echo "Jenkins should be running on http://10.0.0.11:8000"
 	 ../test/acceptance.sh
 
 clean:
