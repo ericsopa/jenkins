@@ -50,7 +50,7 @@ agent-fingerprint:
 	sudo scripts/agent-fingerprint.sh
 
 ## master ##
-puppet: java-module jenkins-module manifests deploy
+puppet: java-module jenkins-module manifests
 
 java-module:
 	sudo puppet module install -v 1.6.0 puppetlabs-java
@@ -62,12 +62,6 @@ manifests:
 	sudo cp /home/vagrant/jenkins/share/master/manifests/site.pp /etc/puppet/manifests/
 	sudo cp /home/vagrant/jenkins/share/master/manifests/init.pp /etc/puppet/manifests/
 	sudo cp /home/vagrant/jenkins/share/master/modules/jenkins/init.pp /etc/puppet/modules/jenkins/manifests
-
-deploy:
-	sudo puppet agent -t
-	echo "makeithappen: Jenkins should be running on http://10.0.0.10:8000"
-	./test/acceptance.sh
-
 
 clean:
 	echo "I'm good"
