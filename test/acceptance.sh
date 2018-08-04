@@ -13,3 +13,4 @@ do
     ((counter++))
 done
 echo "Failed Acceptace Testing, HTTP httpcode: $httpcode"
+echo "Could be a false negative, go to browser and try connecting anyway or rerun the test"
