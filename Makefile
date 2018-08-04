@@ -19,14 +19,14 @@ ithappen:
 	vagrant ssh -c "make -C jenkins/share master-cert-sign" master
 	@echo "makeithappen: Verify Agent fingerprint"
 	vagrant ssh -c "make -C jenkins/share agent-fingerprint" agent
-	@echo "makeithappen: Install Java and Jenkins modules on Master"
-	vagrant ssh -c "make -C jenkins/share java-module jenkins-module" master
-	@echo "makeithappen: Install custom manifests on Master"
-	vagrant ssh -c "make -C jenkins/share manifests" master
-	@echo "makeithappen: Puppet installs Java and Jenkins on Agent"
-	-vagrant ssh -c "sudo puppet agent -t " agent
-	@echo "makeithappen: Jenkins should be running on http://10.0.0.10:8000"
-	./test/acceptance.sh
+	#@echo "makeithappen: Install Java and Jenkins modules on Master"
+	#vagrant ssh -c "make -C jenkins/share java-module jenkins-module" master
+	#@echo "makeithappen: Install custom manifests on Master"
+	#vagrant ssh -c "make -C jenkins/share manifests" master
+	#@echo "makeithappen: Puppet installs Java and Jenkins on Agent"
+	#-vagrant ssh -c "sudo puppet agent -t " agent
+	#@echo "makeithappen: Jenkins should be running on http://10.0.0.10:8000"
+	#./test/acceptance.sh
 clean:
 	vagrant destroy --force
 	mv vms/Vagrantfile .
