@@ -1,7 +1,7 @@
 #!/bin/bash
 
 counter=1
-while [ $counter -le 10 ]
+while [ $counter -le 30 ]
 do
     httpcode=$(curl -s -o /dev/null -w "%{http_code}" http://10.0.0.11:8000/login?from=%2F)
     if [ "$httpcode" == "200" ]; then
