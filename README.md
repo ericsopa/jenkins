@@ -30,3 +30,8 @@ On host, open a web browser and connection to:
  * http://10.0.0.10:8000
 
 Jenkins should be listening on port 8000.
+
+Run make deploy again, nothing is changed and Jenkins is still listening on port 8000.
+```
+[vagrant@agent:~/jenkins/share] $ make deploy
+```
