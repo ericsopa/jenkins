@@ -8,7 +8,6 @@
 1. /etc/puppet/puppet.conf similar to jenkins/share/agent/puppet.conf on Agent
 1. Master-Agent signed certs in place, Puppet environment ready for Puppet code
 1. "jenkins" repo in ~ on Master and Agent VMs
-1. ~  = /home/vagrant/
 
 ### Project Files
 1. Repo uploaded, also available at:
