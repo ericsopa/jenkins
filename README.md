@@ -35,12 +35,12 @@ git clone git@github.com:ericsopa/jenkins.git
 ```
 ### Installation
 ```
-[host:/~/src/jenkins] $ make ithappen
+[host:/~/jenkins] $ make ithappen
 ```
 
 This automation is broken down into 3 phases:
 1. env (2 VMs via Vagrant, Virtual Box, Vagrant scp, private key)
-1. ccs (Puppet 3.8.7 Master and Agent)
+1. cca (Puppet 3.8.7 Master and Agent)
 1. jenkins (Jenkins installed via Puppet)
 
 
@@ -48,30 +48,30 @@ This automation is broken down into 3 phases:
 Code allows automated installation of Puppet 3.8.7 on two clean OS installs of CentOS 6 of your choosing.
 
 ### Dependencies
-Two clean OS installs of CentOS 6
-GNU make
+1. Two clean OS installs of CentOS 6
+1. GNU make
 
 ### Setup
-Simply copy the "jenkins" repo to each machine
+Copy "jenkins" repo in ~ on Master and Agent VMs
 
 ### Installation
 On each machine, run the following commands:
 ```
-[vagrant@master] $ make master-all
+[vagrant@master:~/jenkins/share] $ make master-all
        --- switch host ---
- [vagrant@agent] $ make agent-all
+ [vagrant@agent:~/jenkins/share] $ make agent-all
        --- switch host ---
-[vagrant@master] $ make gen-certs
+[vagrant@master:~/jenkins/share] $ make gen-certs
        --- switch host ---
- [vagrant@agent] $ make gen-csr
+ [vagrant@agent:~/jenkins/share] $ make gen-csr
        --- switch host ---
-[vagrant@master] $ make master-cert-sign
+[vagrant@master:~/jenkins/share] $ make master-cert-sign
        --- switch host ---
- [vagrant@agent] $ make agent-fingerprint
+ [vagrant@agent:~/jenkins/share] $ make agent-fingerprint
        --- switch host ---
-[vagrant@master] $ make puppet
+[vagrant@master:~/jenkins/share] $ make puppet
        --- switch host ---
- [vagrant@agent] $ make depoy
+ [vagrant@agent:~/jenkins/share] $ make depoy
 ```
 
 ## Level 3 Automation
@@ -87,13 +87,13 @@ Code allows automated deployment of Jenkins on two Puppet 3.8.7 Master-Agent VMs
 1. Master-Agent signed certs in place, Puppet environment ready for Puppet code
 
 ### Setup
-1. "jenkins" repo in ~ on Master and Agent VMs
+Copy "jenkins" repo in ~ on Master and Agent VMs
 
 ### Installation
 ```
-[vagrant@master] $ make puppet
+[vagrant@master:~/jenkins/share] $ make puppet
        --- switch host ---
- [vagrant@agent] $ make depoy
+ [vagrant@agent:~/jenkins/share] $ make depoy
 ```
 
 ### Test
