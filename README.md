@@ -3,14 +3,14 @@
 ##Level 1 Automation
 Code allows for a fully automated setup of a two VM environement using Vagrant and VirtualBox, installation of Puppet and Jenkins.
 
-####Dependencies
+###Dependencies
 1. VirtualBox
 1. Vagrant
 1. Vagrant scp plugin
 1. GNU make, git-core, ssh
 1. SSH private key for github.com repo
 
-####Setup
+###Setup
 Assumes linux or Windows with Cygwin or other GNU tools like SSH. This project was built on Windows 10 with Cygwin.
 
 1. Install VirtualBox
@@ -33,7 +33,7 @@ ssh-add ~/.ssh/id_rsa_puppet
 ```
 git clone git@github.com:ericsopa/jenkins.git
 ```
-####Installation
+###Installation
 ```
 [host:/~/src/jenkins] $ make ithappen
 ```
@@ -47,14 +47,14 @@ This automation is broken down into 3 phases:
 ##Level 2 Automation
 Code allows automated installation of Puppet 3.8.7 on two clean OS installs of CentOS 6 of your choosing.
 
-####Dependencies
+###Dependencies
 Two clean OS installs of CentOS 6
 GNU make
 
-####Setup
+###Setup
 Simply copy the "jenkins" repo to each machine
 
-####Installation
+###Installation
 On each machine, run the following commands:
 ```
 [vagrant@master] $ make master-all
@@ -86,10 +86,10 @@ Code allows automated deployment of Jenkins on two Puppet 3.8.7 Master-Agent VMs
 1. /etc/puppet/puppet.conf similar to jenkins/share/agent/puppet.conf on Agent
 1. Master-Agent signed certs in place, Puppet environment ready for Puppet code
 
-####Setup
+###Setup
 1. "jenkins" repo in ~ on Master and Agent VMs
 
-####Installation
+###Installation
 ```
 [vagrant@master] $ make puppet
        --- switch host ---
