@@ -13,9 +13,10 @@ Code allows for a fully automated setup of a two VM environement using Vagrant a
 ### Setup
 Assumes linux or Windows with Cygwin or other GNU tools like SSH. This project was built on Windows 10 with Cygwin.
 
-1. Install VirtualBox
-2. Install Vagrant
-3. Install vagrant scp plugin
+1. Install Git, make (Cygwin or XCode) 
+2. Install VirtualBox
+3. Install Vagrant
+4. Install vagrant scp plugin
 ```
 vagrant plugin install vagrant-scp
 ```
@@ -26,7 +27,7 @@ cp id_rsa_puppet ~/.ssh
 5. Configure SSH keys
 ```
 chmod 0400 ~/.ssh/id_rsa_puppet*
-ssh-agent /bin/sh
+ssh-agent /bin/bash
 ssh-add ~/.ssh/id_rsa_puppet
 ```
 6. Clone Git repo
