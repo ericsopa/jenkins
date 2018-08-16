@@ -1,4 +1,4 @@
-export VAGRANT_CWD := . 
+export VAGRANT_CWD := .
 
 keys:
 	cp ~/.ssh/id_rsa_puppet .
