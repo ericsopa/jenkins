@@ -10,7 +10,7 @@ do
     fi
 
     sleep 1
-    echo -n "Testing for $counter of 60 seconds"
+    echo "Testing for $counter of 60 seconds"
     ((counter++))
 done
 echo ""
