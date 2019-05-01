@@ -72,7 +72,7 @@ On each machine, run the following commands:
        --- switch host ---
 [vagrant@master:~/jenkins/share] $ make puppet
        --- switch host ---
- [vagrant@agent:~/jenkins/share] $ make depoy
+ [vagrant@agent:~/jenkins/share] $ make deploy
 ```
 
 ## Level 3 Automation
@@ -94,7 +94,7 @@ Copy "jenkins" repo in ~ on Master and Agent VMs
 ```
 [vagrant@master:~/jenkins/share] $ make puppet
        --- switch host ---
- [vagrant@agent:~/jenkins/share] $ make depoy
+ [vagrant@agent:~/jenkins/share] $ make deploy
 ```
 
 ### Test
